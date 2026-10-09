@@ -246,7 +246,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-a
   <div class="sec-h"><h2><span class="zh">著作</span><span class="en">Publications</span></h2><span class="sub">PUBLICATIONS</span></div>
   <div class="filters">
     <input class="search" id="q" type="search" placeholder="搜尋標題、作者、期刊… / Search" aria-label="搜尋著作">
-    <button class="btn" id="fFirst" type="button" aria-pressed="false"><span class="zh">只看第一作者</span><span class="en">First-author only</span></button>
+    <button class="btn" id="fFirst" type="button" aria-pressed="false"><span class="zh">只看第一作者（含共同）</span><span class="en">First / co-first only</span></button>
   </div>
   <div id="pubs"></div>
 </section>
@@ -298,7 +298,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-a
 <script>
 const ME = /^(Su PH|Po-Hsuan Su)$/;
 
-/* type: J = journal article, B = book chapter; first: first author per NSTC C302 / CV */
+/* type: J = journal article, B = book chapter; first: true = first author, "co" = co-first author */
 const PUBS = [
  {y:2026,a:"Su PH, Lee YX, Do AQ, Tzeng CR, Hu YM, Chen LY, Weng YC, Wang HC, Lai HC",t:"Machine learning–based cervical secretions DNA methylation profiling of implantation window genes enhances live birth prediction in frozen embryo transfer",j:"Scientific Reports",v:"",first:true},
  {y:2026,a:"Su KM, Wen KC, Lin YH, Su PH, Chen LY, Lai HC",t:"A DNA methylation assay (MPap) using self-collected tampon versus cytology collection swab for endometrial cancer detection",j:"International Journal of Gynecology & Obstetrics",v:"173(3):1400–1407"},
@@ -325,7 +325,7 @@ const PUBS = [
  {y:2017,a:"Su PH, Hsu YW, Huang RL, Weng YC, Wang HC, Chen YC, Tsai YJ, Yuan CC, Lai HC",t:"Methylomics of nitroxidative stress on precancerous cells reveals DNA methylation alteration at the transition from in situ to invasive cervical cancer",j:"Oncotarget",v:"8(39):65281–65291",first:true},
  {y:2017,a:"Chao TK, Huang TS, Liao YP, Huang RL, Su PH, Shen HY, Lai HC, Wang YC",t:"Pyruvate kinase M2 is a poor prognostic marker of and a therapeutic target in ovarian cancer",j:"PLoS One",v:"12(7):e0182166"},
  {y:2017,a:"Hsu YW, Huang RL, Su PH, Chen YC, Wang HC, Liao CC, Lai HC",t:"Genotype-specific methylation of HPV in cervical intraepithelial neoplasia",j:"Journal of Gynecologic Oncology",v:"28(4):e56"},
- {y:2017,a:"Huang RL, Su PH, Liao YP, Wu TI, Hsu YT, Lin WY, Wang HC, Weng YC, Ou YC, Huang TH, Lai HC",t:"Integrated epigenomics analysis reveals a DNA methylation panel for endometrial cancer detection using cervical scrapings",j:"Clinical Cancer Research",v:"23(1):263–272"},
+ {y:2017,a:"Huang RL, Su PH, Liao YP, Wu TI, Hsu YT, Lin WY, Wang HC, Weng YC, Ou YC, Huang TH, Lai HC",t:"Integrated epigenomics analysis reveals a DNA methylation panel for endometrial cancer detection using cervical scrapings",j:"Clinical Cancer Research",v:"23(1):263–272",first:"co"},
  {y:2016,a:"Lin CK, Bai MY, Hu TM, Wang YC, Chao TK, Weng SJ, Huang RL, Su PH, Lai HC",t:"Preclinical evaluation of a nanoformulated antihelminthic, niclosamide, in ovarian cancer",j:"Oncotarget",v:"7(8):8993–9006"}
 ];
 
@@ -356,7 +356,7 @@ function renderStats(){
   const pi = PROJECTS.filter(p => p.role[1] === "PI").length;
   const items = [
     [j.length, "篇期刊論文", "journal articles"],
-    [first, "篇第一作者著作", "first-author works"],
+    [first, "篇第一作者著作（含共同）", "first / co-first-author works"],
     [PROJECTS.length, "項研究計畫", "research grants"],
     [pi, "項擔任主持人", "as principal investigator"]
   ];
@@ -386,7 +386,7 @@ function renderPubs(){
     if(p.y !== yr){ yr = p.y; html += `<div class="yr">${yr}</div>`; }
     const au = p.a.split(", ").map(n => ME.test(n) ? `<b>${esc(n)}</b>` : esc(n)).join(", ");
     const link = p.type === "B" ? "" : `<a class="lk" href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(p.t)}" target="_blank" rel="noopener">PubMed ↗</a>`;
-    const tags = (p.first ? `<span class="badge first">${bi("第一作者","First author")}</span>` : "") + (p.type === "B" ? `<span class="badge done">${bi("專書論文","Book chapter")}</span>` : "");
+    const tags = (p.first ? `<span class="badge first">${p.first === "co" ? bi("共同第一作者","Co-first author") : bi("第一作者","First author")}</span>` : "") + (p.type === "B" ? `<span class="badge done">${bi("專書論文","Book chapter")}</span>` : "");
     html += `<div class="pub${p.first?" is-first":""}"><div class="ti">${tags}${esc(p.t)}</div><div class="au">${au}</div><div class="jo"><i>${esc(p.j)}</i>${p.v?", "+esc(p.v):""}. ${p.y}.${link}</div></div>`;
   }
   $("#pubs").innerHTML = html;
