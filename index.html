@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh-Hant" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>蘇博玄 Po-Hsuan Su</title>
+<meta name="description" content="蘇博玄（Po-Hsuan Su），國立臺北護理健康大學健康科技學院助理教授。研究領域：AI 健康促進、原住民族與偏鄉高齡健康、臨床預測模型、表觀遺傳生物標記。">
+<meta property="og:title" content="蘇博玄 Po-Hsuan Su, PhD">
+<meta property="og:description" content="AI for precision health · Indigenous & rural aging health · Clinical prediction · Epigenetic biomarkers">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --surface-2:#efede6;
+  --text:#1d2321; --muted:#5b6662; --line:#dcd9cf;
+  --accent:#1f6f5c; --accent-soft:#e1efe9; --accent-2:#b5652a;
+  --shadow:0 1px 2px rgba(20,30,25,.06),0 4px 16px rgba(20,30,25,.05);
+  --radius:14px; --maxw:1040px;
+  --font-sans:"Inter","Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-serif:"Noto Serif TC","Songti TC","PMingLiU",Georgia,serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121615; --surface:#1a201e; --surface-2:#222a27;
+    --text:#e6ebe8; --muted:#9aa7a2; --line:#2e3834;
+    --accent:#6fc2a8; --accent-soft:#1f332c; --accent-2:#e3a06b;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121615; --surface:#1a201e; --surface-2:#222a27;
+  --text:#e6ebe8; --muted:#9aa7a2; --line:#2e3834;
+  --accent:#6fc2a8; --accent-soft:#1f332c; --accent-2:#e3a06b;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;overflow-wrap:anywhere;background:var(--bg);color:var(--text);font-family:var(--font-sans);font-size:16px;line-height:1.75}
+img{max-width:100%;display:block}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.3;margin:0}
+html[data-lang="zh"] .en, html[data-lang="en"] .zh{display:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:var(--maxw);margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;color:var(--text);white-space:nowrap}
+.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.links::-webkit-scrollbar{display:none}
+.links a{color:var(--muted);padding:6px 10px;border-radius:8px;font-size:14px;white-space:nowrap}
+.links a:hover{background:var(--surface-2);color:var(--text);text-decoration:none}
+.tools{display:flex;gap:6px}
+.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:5px 10px;cursor:pointer;min-height:32px}
+.btn:hover{border-color:var(--accent)}
+.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+
+main{max-width:var(--maxw);margin:0 auto;padding:0 16px 64px}
+section{padding:56px 0 8px;scroll-margin-top:56px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.sec-h h2{font-family:var(--font-serif);font-size:26px}
+.sec-h .sub{color:var(--muted);font-size:14px;letter-spacing:.04em}
+
+/* hero */
+.hero>*,.grid>*,.two>*,.stats>*,.proj>*{min-width:0}
+.hero{padding:64px 0 24px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center}
+.hero h1{font-family:var(--font-serif);font-size:clamp(34px,6vw,48px)}
+.hero h1 small{display:block;font-family:var(--font-sans);font-size:clamp(17px,2.4vw,20px);font-weight:500;color:var(--muted);margin-top:6px}
+.role{margin:16px 0 0;font-size:17px}
+.role .org{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.tags li{background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:500;padding:4px 12px;border-radius:999px}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.contact-row a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:10px;color:var(--text);font-size:14px}
+.contact-row a:hover{border-color:var(--accent);text-decoration:none}
+.avatar{width:148px;height:148px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:56px;font-weight:700;box-shadow:var(--shadow)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.stat b{display:block;font-size:28px;font-family:var(--font-serif);color:var(--accent);line-height:1.2}
+.stat span{font-size:13px;color:var(--muted)}
+
+.prose{max-width:760px}
+.prose p{margin:0 0 14px}
+
+/* research cards */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card .num{font-size:12px;font-weight:600;color:var(--accent-2);letter-spacing:.08em}
+.card h3{font-size:18px;margin:6px 0 10px}
+.card p{margin:0 0 10px;color:var(--text);font-size:15px}
+.card .kw{font-size:13px;color:var(--muted)}
+.note{border-left:3px solid var(--accent-2);background:var(--surface-2);padding:10px 14px;border-radius:0 10px 10px 0;font-size:14px;margin-top:12px}
+
+/* projects */
+.plist{display:flex;flex-direction:column;gap:10px}
+.proj{display:grid;grid-template-columns:150px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.proj .when{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.proj .t{font-weight:500}
+.proj .t .tr{display:block;font-weight:400;font-size:14px;color:var(--muted)}
+.proj .meta{font-size:13px;color:var(--muted);margin-top:4px}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:6px;margin-right:6px;vertical-align:1px}
+.badge.on{background:var(--accent-soft);color:var(--accent)}
+.badge.done{background:var(--surface-2);color:var(--muted)}
+.badge.first{background:color-mix(in srgb,var(--accent-2) 18%,transparent);color:var(--accent-2)}
+
+/* publications */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:200px;font:inherit;font-size:14px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text)}
+.search:focus{outline:2px solid var(--accent);outline-offset:1px}
+.yr{font-family:var(--font-serif);font-size:18px;color:var(--accent);margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+.pub{padding:10px 0 10px 14px;border-left:2px solid transparent}
+.pub.is-first{border-left-color:var(--accent-2)}
+.pub .ti{font-weight:500}
+.pub .au{font-size:14px;color:var(--muted)}
+.pub .au b{color:var(--text)}
+.pub .jo{font-size:14px}
+.pub .jo i{color:var(--text)}
+.pub .lk{font-size:13px;margin-left:8px}
+.empty{color:var(--muted);padding:12px 0}
+
+/* timeline */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 18px 20px}
+.tl li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl .d{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl .p{font-weight:500}
+.tl .o{font-size:14px;color:var(--muted)}
+.h3{font-size:17px;margin-bottom:14px}
+
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center;padding:24px 16px}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  .avatar{width:96px;height:96px;font-size:38px;order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid,.two{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr;gap:4px}
+  .brand{display:none}
+}
+@media print{.nav,.filters{display:none}section{padding-top:24px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="主選單">
+  <div class="nav-in">
+    <a class="brand" href="#top"><span class="zh">蘇博玄</span><span class="en">Po-Hsuan Su</span></a>
+    <div class="links">
+      <a href="#about"><span class="zh">簡介</span><span class="en">About</span></a>
+      <a href="#research"><span class="zh">研究主題</span><span class="en">Research</span></a>
+      <a href="#projects"><span class="zh">研究計畫</span><span class="en">Grants</span></a>
+      <a href="#publications"><span class="zh">著作</span><span class="en">Publications</span></a>
+      <a href="#cv"><span class="zh">學經歷</span><span class="en">CV</span></a>
+      <a href="#contact"><span class="zh">聯絡</span><span class="en">Contact</span></a>
+    </div>
+    <div class="tools">
+      <button class="btn" id="langBtn" type="button" aria-label="切換語言 / Switch language">EN</button>
+      <button class="btn" id="themeBtn" type="button" aria-label="切換深淺色 / Toggle theme">◐</button>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <div>
+    <h1>蘇博玄<small>Po-Hsuan Su, PhD</small></h1>
+    <p class="role">
+      <span class="zh">助理教授級專案計畫教學人員<br><span class="org">國立臺北護理健康大學 健康科技學院</span></span>
+      <span class="en">Assistant Professor (Project-based Faculty)<br><span class="org">College of Health Technology, National Taipei University of Nursing and Health Sciences (NTUNHS), Taiwan</span></span>
+    </p>
+    <ul class="tags">
+      <li><span class="zh">精準健康</span><span class="en">Precision health</span></li>
+      <li><span class="zh">醫療 AI／LLM</span><span class="en">Medical AI / LLM</span></li>
+      <li><span class="zh">原住民族健康</span><span class="en">Indigenous health</span></li>
+      <li><span class="zh">健康促進</span><span class="en">Health promotion</span></li>
+      <li><span class="zh">表觀遺傳學</span><span class="en">Epigenetics</span></li>
+      <li><span class="zh">資料分析</span><span class="en">Data analytics</span></li>
+    </ul>
+    <div class="contact-row">
+      <a href="mailto:pohsuansu@gmail.com">✉ pohsuansu@gmail.com</a>
+      <a href="#publications"><span class="zh">📄 著作清單</span><span class="en">📄 Publications</span></a>
+      <a href="https://www.ntunhs.edu.tw/" target="_blank" rel="noopener">🏛 NTUNHS</a>
+    </div>
+  </div>
+  <div class="avatar" aria-hidden="true">蘇</div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<section id="about">
+  <div class="sec-h"><h2><span class="zh">簡介</span><span class="en">About</span></h2><span class="sub">ABOUT</span></div>
+  <div class="prose">
+    <p class="zh">我是國立臺北護理健康大學健康科技學院的助理教授級專案計畫教學人員，研究重心是把人工智慧、機器學習與資料分析導入精準健康與醫療照護。目前主持國科會「結合 RAG-LLM 與語音互動的智慧運動處方 AIoT 系統」計畫，並在文化健康站與偏鄉日間照護機構推動 AI 營養與運動支援的健康促進模式。</p>
+    <p class="zh">我的訓練背景是分子生物學與癌症表觀遺傳學。2012 年於國防醫學院取得醫學科學博士後，於雙和醫院婦產部與表基因轉譯醫學中心從事研究近十年，主題包括以子宮頸抹片 DNA 甲基化偵測子宮內膜癌與卵巢癌，以及以子宮頸分泌物甲基化預測胚胎植入結果。這段經驗讓我在醫療 AI 研究中，同時重視臨床可用性與資料的生物學意義。</p>
+    <p class="en">I am an Assistant Professor (project-based faculty) at the College of Health Technology, National Taipei University of Nursing and Health Sciences. My work brings artificial intelligence, machine learning and data analytics into precision health and healthcare delivery. I currently lead a National Science and Technology Council (NSTC) project on a RAG-LLM, voice-interactive AIoT system for personalised exercise prescription, and run AI-supported nutrition and physical-activity programmes at Indigenous cultural health stations and rural day-care centres.</p>
+    <p class="en">My training is in molecular biology and cancer epigenetics. After a PhD in Medical Sciences at the National Defense Medical Center (2012), I spent close to ten years at Shuang Ho Hospital developing DNA methylation biomarkers — detecting endometrial and ovarian cancer from cervical scrapings and predicting embryo-implantation outcomes from cervical secretions. That background shapes how I approach medical AI: models must be clinically usable and biologically interpretable.</p>
+  </div>
+</section>
+
+<section id="research">
+  <div class="sec-h"><h2><span class="zh">研究主題</span><span class="en">Research themes</span></h2><span class="sub">RESEARCH</span></div>
+  <div class="grid">
+    <article class="card">
+      <div class="num">01</div>
+      <h3><span class="zh">生成式 AI 與 AIoT 健康促進</span><span class="en">Generative AI &amp; AIoT for health promotion</span></h3>
+      <p class="zh">以檢索增強生成（retrieval-augmented generation, RAG）結合大型語言模型，搭配語音互動與穿戴裝置，為中高齡與慢性病族群提供個人化運動處方與營養建議，並在實際照護場域驗證可行性。</p>
+      <p class="en">Retrieval-augmented large language models combined with voice interaction and wearable devices to deliver personalised exercise prescriptions and nutrition advice for older adults and people with chronic disease, evaluated in real care settings.</p>
+      <div class="kw">RAG-LLM · AIoT · <span class="zh">運動處方 · AI 營養師</span><span class="en">exercise prescription · AI dietitian</span></div>
+    </article>
+    <article class="card">
+      <div class="num">02</div>
+      <h3><span class="zh">原住民族與偏鄉高齡健康</span><span class="en">Indigenous &amp; rural aging health</span></h3>
+      <p class="zh">於文化健康站與偏鄉日間照護機構導入 AI 營養與運動支援模組，結合規律體適能活動，建構長者整合型健康促進模式。</p>
+      <p class="en">Integrating AI nutrition and physical-activity modules with regular fitness programmes at Indigenous cultural health stations and rural day-care centres to build an integrated health-promotion model for older adults.</p>
+      <div class="note"><span class="zh">原住民族健康資料的蒐集與 AI 應用，以文化安全與部落資料治理為前提，不只從技術面處理。</span><span class="en">Data collection and AI use with Indigenous communities are grounded in cultural safety and Indigenous data governance, not treated as a purely technical problem.</span></div>
+    </article>
+    <article class="card">
+      <div class="num">03</div>
+      <h3><span class="zh">臨床預測模型與醫療 AI</span><span class="en">Clinical prediction &amp; medical AI</span></h3>
+      <p class="zh">以隨機存活森林等可解釋模型建立肝細胞癌術後預後預測、以機器學習分析胃癌病理切片，並應用於長照個案管理與公共衛生資料整合，作為臨床決策與政策規劃的基礎。</p>
+      <p class="en">Interpretable models such as random survival forests for post-operative prognosis in hepatocellular carcinoma, machine learning for gastric-cancer pathology slides, and AI support for long-term-care case management and public-health data integration.</p>
+      <div class="kw"><span class="zh">存活分析 · 可解釋 AI · 數位病理 · 健康大數據</span><span class="en">survival analysis · explainable AI · digital pathology · health big data</span></div>
+    </article>
+    <article class="card">
+      <div class="num">04</div>
+      <h3><span class="zh">表觀遺傳生物標記</span><span class="en">Epigenetic biomarkers</span></h3>
+      <p class="zh">以 DNA 甲基化建立非侵入性檢測：從子宮頸抹片偵測子宮內膜癌與卵巢癌、從子宮頸分泌物預測冷凍胚胎植入的活產結果，並探討 TET1、PAX1、NKX6-1 等基因在癌症幹細胞中的角色。</p>
+      <p class="en">Non-invasive DNA methylation assays — detecting endometrial and ovarian cancer from cervical scrapings and predicting live birth after frozen embryo transfer from cervical secretions — and the roles of TET1, PAX1 and NKX6-1 in cancer stemness.</p>
+      <div class="kw"><span class="zh">DNA 甲基化 · 婦癌篩檢 · 生殖醫學 · 生物資訊</span><span class="en">DNA methylation · gynaecological cancer screening · reproductive medicine · bioinformatics</span></div>
+    </article>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-h"><h2><span class="zh">研究計畫</span><span class="en">Research grants</span></h2><span class="sub">GRANTS</span></div>
+  <div class="plist" id="plist"></div>
+</section>
+
+<section id="publications">
+  <div class="sec-h"><h2><span class="zh">著作</span><span class="en">Publications</span></h2><span class="sub">PUBLICATIONS</span></div>
+  <div class="filters">
+    <input class="search" id="q" type="search" placeholder="搜尋標題、作者、期刊… / Search" aria-label="搜尋著作">
+    <button class="btn" id="fFirst" type="button" aria-pressed="false"><span class="zh">只看第一作者</span><span class="en">First-author only</span></button>
+  </div>
+  <div id="pubs"></div>
+</section>
+
+<section id="cv">
+  <div class="sec-h"><h2><span class="zh">學經歷</span><span class="en">Education &amp; experience</span></h2><span class="sub">CV</span></div>
+  <div class="two">
+    <div>
+      <h3 class="h3"><span class="zh">經歷</span><span class="en">Experience</span></h3>
+      <ul class="tl">
+        <li><div class="d">2024/02 –</div><div class="p"><span class="zh">助理教授級專案計畫教學人員</span><span class="en">Assistant Professor (Project-based Faculty)</span></div><div class="o"><span class="zh">國立臺北護理健康大學 健康科技學院</span><span class="en">College of Health Technology, NTUNHS</span></div></li>
+        <li><div class="d">2017/05 – 2024/01</div><div class="p"><span class="zh">院聘助理研究員</span><span class="en">Assistant Research Fellow</span></div><div class="o"><span class="zh">衛生福利部雙和醫院 表基因轉譯醫學中心</span><span class="en">Translational Epigenetics Center, Shuang Ho Hospital</span></div></li>
+        <li><div class="d">2018/09 – 2021/02</div><div class="p"><span class="zh">執行秘書</span><span class="en">Executive Secretary</span></div><div class="o"><span class="zh">衛生福利部雙和醫院 細胞治療中心</span><span class="en">Cell Therapy Center, Shuang Ho Hospital</span></div></li>
+        <li><div class="d">2015/05 – 2017/04</div><div class="p"><span class="zh">科聘研究員</span><span class="en">Research Fellow</span></div><div class="o"><span class="zh">衛生福利部雙和醫院 婦產部</span><span class="en">Department of Obstetrics &amp; Gynecology, Shuang Ho Hospital</span></div></li>
+        <li><div class="d">2013/12 – 2014/07</div><div class="p"><span class="zh">博士級研究助理</span><span class="en">Postdoctoral Research Assistant</span></div><div class="o"><span class="zh">臺北醫學大學 醫學系</span><span class="en">School of Medicine, Taipei Medical University</span></div></li>
+        <li><div class="d">2012/05 – 2013/11</div><div class="p"><span class="zh">博士級研究助理</span><span class="en">Postdoctoral Research Assistant</span></div><div class="o"><span class="zh">國防醫學院 微生物及免疫學研究所</span><span class="en">Graduate Institute of Microbiology &amp; Immunology, National Defense Medical Center</span></div></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="h3"><span class="zh">學歷</span><span class="en">Education</span></h3>
+      <ul class="tl">
+        <li><div class="d">2004/09 – 2012/04</div><div class="p"><span class="zh">博士</span><span class="en">PhD, Medical Sciences</span></div><div class="o"><span class="zh">國防醫學院 醫學科學研究所</span><span class="en">Graduate Institute of Medical Sciences, National Defense Medical Center</span></div></li>
+        <li><div class="d">1998/09 – 2000/07</div><div class="p"><span class="zh">碩士</span><span class="en">MSc, Cell &amp; Molecular Biology</span></div><div class="o"><span class="zh">臺北醫學大學 細胞及分子生物研究所</span><span class="en">Graduate Institute of Cell &amp; Molecular Biology, Taipei Medical University</span></div></li>
+        <li><div class="d">1994/09 – 1998/07</div><div class="p"><span class="zh">學士</span><span class="en">BSc, Zoology</span></div><div class="o"><span class="zh">國立中興大學 動物學系</span><span class="en">Department of Zoology, National Chung Hsing University</span></div></li>
+      </ul>
+      <h3 class="h3" style="margin-top:12px"><span class="zh">專長</span><span class="en">Expertise</span></h3>
+      <p class="zh" style="margin:0">精準健康、精準醫療、健康大數據、機器學習、人工智慧、AIoT 智慧物聯網、生物資訊、生物醫學資料庫分析、癌症生物學</p>
+      <p class="en" style="margin:0">Precision health and medicine, health big data, machine learning, artificial intelligence, AIoT, bioinformatics, biomedical database mining, cancer biology</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-h"><h2><span class="zh">聯絡</span><span class="en">Contact</span></h2><span class="sub">CONTACT</span></div>
+  <div class="prose">
+    <p class="zh">歡迎對 AI 健康促進、醫療資料分析或表觀遺傳生物標記有興趣的學生、臨床夥伴與產業單位來信討論合作。</p>
+    <p class="en">Students, clinicians and industry partners interested in AI for health promotion, medical data analytics or epigenetic biomarkers are welcome to get in touch.</p>
+    <p>✉ <a href="mailto:pohsuansu@gmail.com">pohsuansu@gmail.com</a><br>
+    🏛 <span class="zh">國立臺北護理健康大學 健康科技學院（臺北市北投區明德路 365 號）</span><span class="en">College of Health Technology, NTUNHS, No. 365, Mingde Rd., Beitou Dist., Taipei 112, Taiwan</span></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © <span id="yr"></span> Po-Hsuan Su · <span class="zh">最後更新</span><span class="en">Last updated</span> 2026-10
+</footer>
+
+<script>
+const ME = /^(Su PH|Po-Hsuan Su)$/;
+
+/* type: J = journal article, B = book chapter; first: first author per NSTC C302 / CV */
+const PUBS = [
+ {y:2026,a:"Su PH, Lee YX, Do AQ, Tzeng CR, Hu YM, Chen LY, Weng YC, Wang HC, Lai HC",t:"Machine learning–based cervical secretions DNA methylation profiling of implantation window genes enhances live birth prediction in frozen embryo transfer",j:"Scientific Reports",v:"",first:true},
+ {y:2026,a:"Su KM, Wen KC, Lin YH, Su PH, Chen LY, Lai HC",t:"A DNA methylation assay (MPap) using self-collected tampon versus cytology collection swab for endometrial cancer detection",j:"International Journal of Gynecology & Obstetrics",v:"173(3):1400–1407"},
+ {y:2025,a:"Chatterjee B, Majumder P, Chen CC, Wang JP, Su PH, Lai HC, Liu CC, Lin HN, Yu CA, Yuan HS, Shen CJ",t:"Hypoxia-induced genome-wide DNA demethylation by DNMT3A and EMT of cancer cells",j:"Cellular & Molecular Biology Letters",v:"30(1):95"},
+ {y:2025,a:"Lien JY, Hii LA, Su PH, Chen LY, Wen KC, Lai HC, Wang YC",t:"Exploring potential methylation markers for ovarian cancer from cervical scraping samples",j:"Human Genomics",v:"19(1):56"},
+ {y:2024,a:"Chen LY, Chou YT, Liew PL, Chu LH, Wen KC, Lin SF, Weng YC, Wang HC, Su PH, Lai HC",t:"In vitro drug testing using patient-derived ovarian cancer organoids",j:"Journal of Ovarian Research",v:"17(1):194"},
+ {y:2024,a:"Chen LY, Shen YA, Chu LH, Su PH, Wang HC, Weng YC, Lin SF, Wen KC, Liew PL, Lai HC",t:"Active DNA demethylase, TET1, increases oxidative phosphorylation and sensitizes ovarian cancer stem cells to mitochondrial complex I inhibitor",j:"Antioxidants (Basel)",v:"13(6):735"},
+ {y:2023,a:"Do QA, Su PH, Chen CW, Wang HC, Lee YX, Weng YC, Chen LY, Hsu YH, Lai HC",t:"DNA methylation of window of implantation genes in cervical secretions predicts ongoing pregnancy in infertility treatment",j:"International Journal of Molecular Sciences",v:"24(6):5598"},
+ {y:2023,a:"Lee YX, Su PH, Do AQ, Tzeng CR, Hu YM, Chen CH, Chen CW, Liao CC, Chen LY, Weng YC, Wang HC, Lai HC",t:"Cervical secretion methylation is associated with the pregnancy outcome of frozen-thawed embryo transfer",j:"International Journal of Molecular Sciences",v:"24(2):1726"},
+ {y:2022,a:"Wen KC, Huang RL, Chen LY, Wu TI, Lu CH, Chu TY, Ou YC, Wu CH, Hsu ST, Ding DC, Chu LH, Chen CW, Chang HC, Liu YS, Wang HC, Weng YC, Su PH, Lin H, Lai HC",t:"Endometrial cancer detection using a cervical DNA methylation assay (MPap) in women with abnormal uterine bleeding: a multicenter hospital-based validation study",j:"Cancers (Basel)",v:"14(17):4343"},
+ {y:2022,a:"Darmawi, Chen LY, Su PH, Liew PL, Wang HC, Weng YC, Huang RL, Lai HC",t:"BHLHE22 expression is associated with a proinflammatory immune microenvironment and confers a favorable prognosis in endometrial cancer",j:"International Journal of Molecular Sciences",v:"23(13):7158"},
+ {y:2022,a:"Chen LY, Huang RL, Su PH, Chu LH, Weng YC, Wang HC, Lai HC, Wen KC",t:"Epigenomic profiling of epithelial ovarian cancer stem-cell differentiation reveals GPD1 associated immune suppressive microenvironment and poor prognosis",j:"International Journal of Molecular Sciences",v:"23(9):5120"},
+ {y:2022,a:"Chu LH, Liao CC, Liew PL, Chen CW, Su PH, Wen KC, Lai HC, Huang RL, Chen LY",t:"Epigenomic analysis reveals the KCNK9 potassium channel as a potential therapeutic target for adenomyosis",j:"International Journal of Molecular Sciences",v:"23(11):5973"},
+ {y:2022,a:"Chen CW, Huang RL, Do AQ, Wang HC, Lee YX, Wang CW, Hsieh CC, Tzeng CR, Hu YM, Chen CH, Weng YC, Su PH, Chen LY, Lai HC",t:"Genome-wide analysis of cervical secretions obtained during embryo transfer reveals the association between DNA methylation and pregnancy outcomes",j:"F&S Science",v:"3(1):74–83"},
+ {y:2021,a:"Su PH, Huang RL, Lai HC, Chen LY, Weng YC, Wang CC, Wu CC",t:"NKX6-1 mediates cancer stem-like properties and regulates sonic hedgehog signaling in leiomyosarcoma",j:"Journal of Biomedical Science",v:"28(1):32",first:true},
+ {y:2021,type:"B",a:"Su PH, Chen LY, Huang RL, Wen KC, Liew PL, Lai HC",t:"Epigenetic biomarker and drug development in gynecological cancers",j:"In: Epigenetics in Precision Medicine",v:"pp. 223–255. ISBN 978-0-12-823008-4",first:true},
+ {y:2019,a:"Liew PL, Huang RL, Wu TI, Liao CC, Chen CW, Su PH, Wang HC, Weng YC, Lai HC",t:"Combined genetic mutations and DNA-methylated genes as biomarkers for endometrial cancer detection from cervical scrapings",j:"Clinical Epigenetics",v:"11(1):170"},
+ {y:2019,a:"Wu TI, Huang RL, Su PH, Mao SP, Wu CH, Lai HC",t:"Ovarian cancer detection by DNA methylation in cervical scrapings",j:"Clinical Epigenetics",v:"11(1):166"},
+ {y:2019,a:"Chen LY, Huang RL, Chan MW, Yan PS, Huang TS, Wu RC, Suryo Rahmanto Y, Su PH, Weng YC, Chou JL, Chao TK, Wang YC, Shih IM, Lai HC",t:"TET1 reprograms the epithelial ovarian cancer epigenome and reveals casein kinase 2α as a therapeutic target",j:"Journal of Pathology",v:"248(3):363–376"},
+ {y:2019,a:"Su PH, Lai HC, Huang RL, Chen LY, Wang YC, Wu TI, Chan MWY, Liao CC, Chen CW, Lin WY, Chang CC",t:"Paired box-1 (PAX1) activates multiple phosphatases and inhibits kinase cascades in cervical cancer",j:"Scientific Reports",v:"9(1):9195",first:true},
+ {y:2019,a:"Su PH, Hsu YW, Huang RL, Chen LY, Chao TK, Liao CC, Chen CW, Wu TI, Mao SP, Balch C, Lai HC",t:"TET1 promotes 5hmC-dependent stemness, and inhibits a 5hmC-independent epithelial-mesenchymal transition, in cervical precancerous lesions",j:"Cancer Letters",v:"450:53–62",first:true},
+ {y:2018,a:"Chen HJ, Huang RL, Liew PL, Su PH, Chen LY, Weng YC, Chang CC, Wang YC, Chan MW, Lai HC",t:"GATA3 as a master regulator and therapeutic target in ovarian high-grade serous carcinoma stem cells",j:"International Journal of Cancer",v:"143(12):3106–3119"},
+ {y:2018,a:"Huang RL, Chen HJ, Chen LY, Chao TK, Lin WY, Liew PL, Su PH, Weng YC, Wang YC, Liao CC, Hsu YW, Wang HC, Lai HC",t:"Epigenetic loss of heparan sulfate 3-O-sulfation sensitizes ovarian carcinoma to oncogenic signals and predicts prognosis",j:"International Journal of Cancer",v:"143(8):1943–1953"},
+ {y:2017,a:"Su PH, Hsu YW, Huang RL, Weng YC, Wang HC, Chen YC, Tsai YJ, Yuan CC, Lai HC",t:"Methylomics of nitroxidative stress on precancerous cells reveals DNA methylation alteration at the transition from in situ to invasive cervical cancer",j:"Oncotarget",v:"8(39):65281–65291",first:true},
+ {y:2017,a:"Chao TK, Huang TS, Liao YP, Huang RL, Su PH, Shen HY, Lai HC, Wang YC",t:"Pyruvate kinase M2 is a poor prognostic marker of and a therapeutic target in ovarian cancer",j:"PLoS One",v:"12(7):e0182166"},
+ {y:2017,a:"Hsu YW, Huang RL, Su PH, Chen YC, Wang HC, Liao CC, Lai HC",t:"Genotype-specific methylation of HPV in cervical intraepithelial neoplasia",j:"Journal of Gynecologic Oncology",v:"28(4):e56"},
+ {y:2017,a:"Huang RL, Su PH, Liao YP, Wu TI, Hsu YT, Lin WY, Wang HC, Weng YC, Ou YC, Huang TH, Lai HC",t:"Integrated epigenomics analysis reveals a DNA methylation panel for endometrial cancer detection using cervical scrapings",j:"Clinical Cancer Research",v:"23(1):263–272"},
+ {y:2016,a:"Lin CK, Bai MY, Hu TM, Wang YC, Chao TK, Weng SJ, Huang RL, Su PH, Lai HC",t:"Preclinical evaluation of a nanoformulated antihelminthic, niclosamide, in ovarian cancer",j:"Oncotarget",v:"7(8):8993–9006"}
+];
+
+/* end: "YYYY-MM" (null = ongoing); status is computed from today's date */
+const PROJECTS = [
+ {s:"2026-05",e:"2027-05",zh:"115 年度桃園市健康資料整合分析與公共衛生政策規劃計畫",en:"Taoyuan City health data integration and public-health policy planning (2026)",role:["協同主持人","Co-PI"],f:["桃園市政府衛生局","Department of Public Health, Taoyuan City Government"]},
+ {s:"2026-02",e:"2026-07",zh:"人工智慧輔助長照個案管理之照顧計畫撰寫前導研究",en:"Pilot study of AI-assisted care-plan writing in long-term-care case management",role:["主持人","PI"],f:["智慧長照有限公司","Industry partner"]},
+ {s:"2026-01",e:"2026-12",zh:"利用隨機存活森林建立肝細胞癌術後預後預測模型之研究",en:"Random survival forest models for post-operative prognosis in hepatocellular carcinoma",role:["協同主持人","Co-PI"],f:["衛生福利部臺北醫院","Taipei Hospital, Ministry of Health and Welfare"]},
+ {s:"2026-01",e:"2026-12",zh:"結合 RAG-LLM 的 AI 營養師系統開發及偏鄉日間照護機構應用",en:"A RAG-LLM AI dietitian for rural day-care centres",role:["主持人","PI"],f:["國立臺北護理健康大學","NTUNHS"]},
+ {s:"2026-01",e:"2026-11",zh:"p53、HER2 與 TFAM 在肝細胞癌之表現及臨床意義之探討",en:"Expression and clinical significance of p53, HER2 and TFAM in hepatocellular carcinoma",role:["協同主持人","Co-PI"],f:["衛生福利部","Ministry of Health and Welfare"]},
+ {s:"2025-12",e:"2026-11",zh:"結合 RAG-LLM 與語音互動的智慧運動處方 AIoT 系統開發及場域應用",en:"A RAG-LLM, voice-interactive AIoT system for personalised exercise prescription: development and field deployment",role:["主持人","PI"],f:["國家科學及技術委員會（114-2637-H-227-002）","NSTC (114-2637-H-227-002)"]},
+ {s:"2025-09",e:null,zh:"文化健康站智慧健康促進整合計畫",en:"Integrated smart health promotion at Indigenous cultural health stations",role:["主持人","PI"],f:["自籌","Self-funded"]},
+ {s:"2025-01",e:"2025-12",zh:"人工智慧驅動的個性化運動處方",en:"AI-driven personalised exercise prescription",role:["主持人","PI"],f:["弘昇健康科技股份有限公司","Industry partner"]},
+ {s:"2025-01",e:"2025-12",zh:"基於機器學習的胃癌病理切片自動化分析系統的開發與應用研究",en:"Machine learning system for automated analysis of gastric-cancer pathology slides",role:["協同主持人","Co-PI"],f:["衛生福利部","Ministry of Health and Welfare"]},
+ {s:"2024-12",e:"2024-12",zh:"委託「數位化健康促進系統」可行性評估計畫",en:"Feasibility assessment of a digital health-promotion system",role:["主持人","PI"],f:["衛生福利部國民健康署","Health Promotion Administration"]},
+ {s:"2023-05",e:"2024-04",zh:"以機器學習策略探討晝夜節律基因 DNA 甲基化與長新冠病人睡眠障礙之相關性",en:"Machine learning analysis of circadian-gene DNA methylation and sleep disturbance in long COVID",role:["子計畫主持人","Sub-project PI"],f:["衛生福利部雙和醫院","Shuang Ho Hospital"]},
+ {s:"2022-08",e:"2025-07",zh:"DNA 去甲基化酶 TET1 在高漿液性卵巢癌免疫微環境的角色",en:"Role of the DNA demethylase TET1 in the immune microenvironment of high-grade serous ovarian cancer",role:["共同主持人","Co-PI"],f:["國家科學及技術委員會（111-2314-B-038-108-MY3）","NSTC (111-2314-B-038-108-MY3)"]},
+ {s:"2020-08",e:"2023-07",zh:"卵巢癌表基因免疫治療方法之開發",en:"Development of epigenetic immunotherapy for ovarian cancer",role:["主持人","PI"],f:["科技部（109-2314-B-038-107-MY3）","MOST (109-2314-B-038-107-MY3)"]}
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const bi = (zh, en) => `<span class="zh">${zh}</span><span class="en">${en}</span>`;
+
+function renderStats(){
+  const j = PUBS.filter(p => p.type !== "B");
+  const first = PUBS.filter(p => p.first).length;
+  const pi = PROJECTS.filter(p => p.role[1] === "PI").length;
+  const items = [
+    [j.length, "篇期刊論文", "journal articles"],
+    [first, "篇第一作者著作", "first-author works"],
+    [PROJECTS.length, "項研究計畫", "research grants"],
+    [pi, "項擔任主持人", "as principal investigator"]
+  ];
+  $("#stats").innerHTML = items.map(([n,z,e]) => `<div class="stat"><b>${n}</b><span>${bi(z,e)}</span></div>`).join("");
+}
+
+function renderProjects(){
+  const now = new Date(); const ym = now.getFullYear()*100 + now.getMonth()+1;
+  const toN = s => +s.replace("-","");
+  const fmt = s => s.replace("-","/");
+  $("#plist").innerHTML = PROJECTS.map(p => {
+    const on = !p.e || toN(p.e) >= ym;
+    const when = `${fmt(p.s)} – ${p.e ? fmt(p.e) : bi("迄今","present")}`;
+    return `<div class="proj"><div class="when">${when}</div><div>
+      <div class="t"><span class="badge ${on?"on":"done"}">${on?bi("執行中","Ongoing"):bi("已結案","Completed")}</span><span class="zh">${p.zh}</span><span class="en">${p.en}<span class="tr">${p.zh}</span></span></div>
+      <div class="meta">${bi(p.role[0],p.role[1])} · ${bi(p.f[0],p.f[1])}</div></div></div>`;
+  }).join("");
+}
+
+function renderPubs(){
+  const q = $("#q").value.trim().toLowerCase();
+  const onlyFirst = $("#fFirst").getAttribute("aria-pressed") === "true";
+  const list = PUBS.filter(p => (!onlyFirst || p.first) && (!q || (p.t+" "+p.a+" "+p.j+" "+p.y).toLowerCase().includes(q)));
+  if(!list.length){ $("#pubs").innerHTML = `<p class="empty">${bi("沒有符合的著作。","No matching publications.")}</p>`; return; }
+  let html = "", yr = null;
+  for(const p of list){
+    if(p.y !== yr){ yr = p.y; html += `<div class="yr">${yr}</div>`; }
+    const au = p.a.split(", ").map(n => ME.test(n) ? `<b>${esc(n)}</b>` : esc(n)).join(", ");
+    const link = p.type === "B" ? "" : `<a class="lk" href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(p.t)}" target="_blank" rel="noopener">PubMed ↗</a>`;
+    const tags = (p.first ? `<span class="badge first">${bi("第一作者","First author")}</span>` : "") + (p.type === "B" ? `<span class="badge done">${bi("專書論文","Book chapter")}</span>` : "");
+    html += `<div class="pub${p.first?" is-first":""}"><div class="ti">${tags}${esc(p.t)}</div><div class="au">${au}</div><div class="jo"><i>${esc(p.j)}</i>${p.v?", "+esc(p.v):""}. ${p.y}.${link}</div></div>`;
+  }
+  $("#pubs").innerHTML = html;
+}
+
+/* preferences: language & theme (per-viewer convenience only) */
+const store = { get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+function setLang(l){
+  document.documentElement.dataset.lang = l;
+  document.documentElement.lang = l === "en" ? "en" : "zh-Hant";
+  $("#langBtn").textContent = l === "en" ? "中文" : "EN";
+  store.set("lang", l);
+}
+function setTheme(t){ if(t) document.documentElement.dataset.theme = t; store.set("theme", t || ""); }
+$("#langBtn").addEventListener("click", () => setLang(document.documentElement.dataset.lang === "en" ? "zh" : "en"));
+$("#themeBtn").addEventListener("click", () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  setTheme(cur === "dark" ? "light" : "dark");
+});
+$("#q").addEventListener("input", renderPubs);
+$("#fFirst").addEventListener("click", e => { const b = e.currentTarget; b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") === "true" ? "false" : "true"); renderPubs(); });
+
+setLang(store.get("lang") || (/^zh/i.test(navigator.language) ? "zh" : "en"));
+if(store.get("theme")) setTheme(store.get("theme"));
+$("#yr").textContent = new Date().getFullYear();
+renderStats(); renderProjects(); renderPubs();
+</script>
+</body>
+</html>
