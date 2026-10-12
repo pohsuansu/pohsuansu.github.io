@@ -6,6 +6,7 @@
 <title>蘇博玄 Po-Hsuan Su</title>
 <meta name="description" content="蘇博玄（Po-Hsuan Su），國立臺北護理健康大學健康科技學院助理教授。研究領域：AI 健康促進、原住民族與偏鄉高齡健康、臨床預測模型、表觀遺傳生物標記。">
 <meta property="og:title" content="蘇博玄 Po-Hsuan Su, PhD">
+<meta property="og:image" content="https://pohsuansu.github.io/photo.jpg">
 <meta property="og:description" content="AI for precision health · Indigenous & rural aging health · Clinical prediction · Epigenetic biomarkers">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +78,7 @@ section{padding:56px 0 8px;scroll-margin-top:56px}
 .contact-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .contact-row a{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);padding:7px 14px;border-radius:10px;color:var(--text);font-size:14px}
 .contact-row a:hover{border-color:var(--accent);text-decoration:none}
-.avatar{width:148px;height:148px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font-family:var(--font-serif);font-size:56px;font-weight:700;box-shadow:var(--shadow)}
+.avatar{width:220px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:18px;background:var(--surface-2);box-shadow:var(--shadow);border:1px solid var(--line)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:8px}
 .stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
 .stat b{display:block;font-size:28px;font-family:var(--font-serif);color:var(--accent);line-height:1.2}
@@ -136,7 +137,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-a
 
 @media (max-width:760px){
   .hero{grid-template-columns:1fr;padding-top:40px}
-  .avatar{width:96px;height:96px;font-size:38px;order:-1}
+  .avatar{width:132px;order:-1}
   .stats{grid-template-columns:repeat(2,1fr)}
   .grid,.two{grid-template-columns:1fr}
   .proj{grid-template-columns:1fr;gap:4px}
@@ -188,7 +189,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-a
       <a href="https://www.ntunhs.edu.tw/" target="_blank" rel="noopener">🏛 NTUNHS</a>
     </div>
   </div>
-  <div class="avatar" aria-hidden="true">蘇</div>
+  <img class="avatar" src="photo.jpg" width="600" height="800" alt="蘇博玄 Po-Hsuan Su">
 </header>
 
 <div class="stats" id="stats"></div>
