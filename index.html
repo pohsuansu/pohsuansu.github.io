@@ -445,7 +445,7 @@ function renderPubs(){
   $("#pubs").innerHTML = html;
 }
 
-/* awards: only entries whose certificate or official notice names Po-Hsuan Su (source files in ../CV/獲獎紀錄/) */
+/* awards: entries whose certificate or official notice names Po-Hsuan Su, plus 2016 (team member, confirmed by Su 2026-11-16); source files in ../CV/獲獎紀錄/ */
 const NIA = ["財團法人生技醫療科技政策研究中心","Research Center for Biotechnology and Medicine Policy"];
 const EMCA = ["子宮內膜癌之甲基化基因生物標記","DNA Methylation Biomarker for Endometrial Cancer Detection"];
 const NIBET = ["胚胎著床成功率之預測生物標記","Non-invasive Implantation Biomarker for Embryo Transfer (NIBET)"];
@@ -460,7 +460,8 @@ const AWARDS = [
  {y:2021,kind:["國家新創獎","National Innovation Award"],n:["國家新創獎 新創精進獎","National Innovation Award — Excelsior Award"],w:EMCA,role:["團隊成員","Team member"],by:NIA},
  {y:2021,kind:["入圍","Finalist"],n:["科技部 2021 未來科技獎 入圍參展","MOST 2021 FutureTech Award — Finalist (exhibiting team)"],w:["子宮內膜癌安蓓甲基化基因檢測","MPap DNA methylation test for endometrial cancer"],role:["團隊成員","Team member"],by:["科技部","Ministry of Science and Technology"]},
  {y:2020,kind:["國家新創獎","National Innovation Award"],n:["國家新創獎 新創精進獎","National Innovation Award — Excelsior Award"],w:EMCA,role:["團隊成員","Team member"],by:NIA},
- {y:2019,kind:["國家新創獎","National Innovation Award"],n:["國家新創獎 新創精進獎","National Innovation Award — Excelsior Award"],w:EMCA,role:["團隊成員","Team member"],by:NIA}
+ {y:2019,kind:["國家新創獎","National Innovation Award"],n:["國家新創獎 新創精進獎","National Innovation Award — Excelsior Award"],w:EMCA,role:["團隊成員","Team member"],by:NIA},
+ {y:2016,kind:["國家新創獎","National Innovation Award"],n:["第 13 屆國家新創獎 學研新創獎","13th National Innovation Award — Academic Research Category"],w:EMCA,role:["團隊成員","Team member"],by:["財團法人國家生技醫療產業策進會","Institute for Biotechnology and Medicine Industry"]}
 ];
 
 function renderAwards(){
